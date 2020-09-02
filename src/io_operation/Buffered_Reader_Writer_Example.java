@@ -3,47 +3,70 @@ package io_operation;
 import java.io.*;
 import java.util.*;
 
-public class BufferedReader_Example {
-	private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public class Buffered_Reader_Writer_Example {
 	
+	private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	public static void main(String[] args) throws Exception{
 		//BufferedReader媛� Scanner蹂대떎 �썾�뵮 鍮좊Ⅴ�땲, 肄붾뵫�뀒�뒪�듃 �궗�씠�듃�뿉�꽌�뒗 BufferedReader瑜� �궗�슜�븯�룄濡� �븯�옄!
 		//split�뒗 �젙洹쒗몴�쁽�떇�쓣 �궗�슜�빐 StringTokenizer�겢�옒�뒪蹂대떎 �뒓由щ떎. �삉�븳, split�� 援щ텇臾몄옄�궗�씠�쓽 鍮� 臾몄옄�뿴�쓣 臾댁떆�븯吏� �븡�뒗�떎.
+		StringTokenizer st;
 		
-		//n踰�
-		//a b c
-		
-		int n = Integer.parseInt(br.readLine());				
-		
+		/* n번 입력 받음 */	
+		int n = Integer.parseInt(br.readLine());						
+
+		//a b c (한 줄)
 		for(int i = 0; i < n; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
-			int[] intArr = new int[st.countTokens()];
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			int c = Integer.parseInt(st.nextToken());
+			
+			bw.write(a + b + c + "\n");
+		}
+		bw.flush();
+		
+		//? (한 줄)
+		for(int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine());
+			int[] intArr = new int[st.countTokens()]; 				//한 줄에 입력받는 수
 			for(int j=0; j<intArr.length; j++) {
 				intArr[j] = Integer.parseInt(st.nextToken());
 			}
 		}
 	
-		//臾댄븳 踰�
-		//a b c
+		/* ?번 입력받음 */
 		String str; 
 		while(( str = br.readLine() ) != null) {
 			if(str.equals("")) { //鍮� 臾몄옄�뿴�� �옒 泥섎━�븯�옄!
 				continue;
 			}
 			
-			StringTokenizer st = new StringTokenizer(str);
+			//a b c (한 줄)
+			st = new StringTokenizer(str);
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			int c = Integer.parseInt(st.nextToken());
+			
+			bw.write(a + b + c + "\n");
+			
+			// ? (한 줄)
+			st = new StringTokenizer(str);
 			int[] intArr = new int[st.countTokens()];
 			for(int j=0; j<intArr.length; j++) {
 				intArr[j] = Integer.parseInt(st.nextToken());
 			}
 			
 		}
+		bw.flush();
 		
+		/* 2차원 array */
+		//input :
 		//column row
-		//2移섏썝 array
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		int column = Integer.parseInt(st.nextToken()); 		//�뿴 			
-		int row = Integer.parseInt(st.nextToken());			//�뻾
+		//2차원 배열
+		st = new StringTokenizer(br.readLine());
+		int column = Integer.parseInt(st.nextToken()); 					
+		int row = Integer.parseInt(st.nextToken());			
 		
 		int[][] intArr = new int[row][column];
 		
@@ -60,7 +83,9 @@ public class BufferedReader_Example {
 			strArr[i] = br.readLine();
 		}
 		
-		//n踰덉쓽 �닽�옄媛� �삩�떎
+		/* 1차원 array */
+		//input:
+		//a
 		int[] intArr2 = new int[n];
 		for(int i=0; i<n; i++) {
 			intArr2[i] = Integer.parseInt(br.readLine());
@@ -68,6 +93,7 @@ public class BufferedReader_Example {
 		 		 
 		 
 		br.close();
+		bw.close();
 	}
 
 }
