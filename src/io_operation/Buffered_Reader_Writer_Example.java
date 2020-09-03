@@ -8,8 +8,7 @@ public class Buffered_Reader_Writer_Example {
 	private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	public static void main(String[] args) throws Exception{
-		//BufferedReader媛� Scanner蹂대떎 �썾�뵮 鍮좊Ⅴ�땲, 肄붾뵫�뀒�뒪�듃 �궗�씠�듃�뿉�꽌�뒗 BufferedReader瑜� �궗�슜�븯�룄濡� �븯�옄!
-		//split�뒗 �젙洹쒗몴�쁽�떇�쓣 �궗�슜�빐 StringTokenizer�겢�옒�뒪蹂대떎 �뒓由щ떎. �삉�븳, split�� 援щ텇臾몄옄�궗�씠�쓽 鍮� 臾몄옄�뿴�쓣 臾댁떆�븯吏� �븡�뒗�떎.
+
 		StringTokenizer st;
 		
 		/* n번 입력 받음 */	
@@ -38,7 +37,7 @@ public class Buffered_Reader_Writer_Example {
 		/* ?번 입력받음 */
 		String str; 
 		while(( str = br.readLine() ) != null) {
-			if(str.equals("")) { //鍮� 臾몄옄�뿴�� �옒 泥섎━�븯�옄!
+			if(str.equals("")) { 
 				continue;
 			}
 			
